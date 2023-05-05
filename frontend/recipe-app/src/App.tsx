@@ -4,7 +4,7 @@ import "./App.css";
 import { AppContext } from "./AppContext";
 import RecipeContainer from "./components/RecipeContainer";
 import Search from "./components/Search";
-import { ISavedRecipe } from "./types";
+import { ISavedRecipe, IFullRecipe } from "./types";
 import SavedRecipes from "./components/SavedRecipes";
 
 const App = () => {
@@ -15,6 +15,10 @@ const App = () => {
   const [status, setStatus] = useState(false)
   const [savedRecipes, setSavedRecipes] = useState<ISavedRecipe[]>([
     {recipeId : "", label: "", image: "", source: "", shareAs: "", ingredientLines: [] },
+  ]);
+
+  const [fullRecipe, setFullRecipe] = useState<IFullRecipe[]>([
+    {recipeId : "", label: "", image: "", source: "", shareAs: "", ingredientLines: [] , dietLabels: [], healthLabels: [], calories: 0, totalWeight: 0, totalTime: 0, cuisineType: [], dishType: [], digest: []},
   ]);
 
   const getRecipes = async () => {
@@ -51,7 +55,9 @@ const App = () => {
           showSavedRecipes,
           setShowSavedRecipes,
           status,
-          setStatus
+          setStatus,
+          fullRecipe,
+          setFullRecipe,
         }}
       >
         <Search />

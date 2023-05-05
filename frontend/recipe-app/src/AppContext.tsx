@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IRecipe, ISavedRecipe } from "./types";
+import { IRecipe, ISavedRecipe, IFullRecipe } from "./types";
 
 interface IAppContext {
   search: string;
@@ -13,6 +13,8 @@ interface IAppContext {
   setShowSavedRecipes: (recipe : boolean) => void;
   status: boolean;
   setStatus: (recipe: boolean) => void;
+  fullRecipe : IFullRecipe[];
+  setFullRecipe: (recipe : IFullRecipe[]) => void;
 
 }
 
@@ -27,6 +29,8 @@ export const AppContext = createContext<IAppContext>({
   showSavedRecipes : false,
   setShowSavedRecipes: (recipe) => {},
   status: false,
-  setStatus: (recipe) => {}
+  setStatus: (recipe) => {},
+  fullRecipe: [],
+  setFullRecipe: (recipe) => {}, 
 
 });

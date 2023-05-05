@@ -23,6 +23,11 @@
     margin-bottom: 20px;
 }
 
+.saved-recipe__heading{
+    width: fit-content;
+    height: fit-content;
+}
+
 .saved-recipe__source a {
     color: #227014;
   }

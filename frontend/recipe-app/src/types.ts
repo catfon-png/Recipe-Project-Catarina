@@ -21,6 +21,10 @@ export interface IRecipeClass {
   totalDaily: Total;
   digest: any[];
 }
+export interface IRecipe {
+  recipes: IRecipeClass;
+}
+// would also be cool to add diet labels to recipe
 export interface ISavedRecipe {
   recipeId : string,
   label: string;
@@ -31,9 +35,26 @@ export interface ISavedRecipe {
   status? : boolean;
 }
 
-export interface IRecipe {
-  recipes: IRecipeClass;
+export interface IFullRecipe {
+  recipeId : string,
+  label: string;
+  image: string;
+  source: string;
+  shareAs: string;
+  ingredientLines: string[];
+  dietLabels: any[];
+  healthLabels: any[];
+  calories: number;
+  totalWeight: number;
+  totalTime: number;
+  cuisineType: any[];
+  dishType: any[];
+  // totalNutrients: Total;
+  // totalDaily: Total;
+  digest: any[];
 }
+
+
 
 export interface IRecipes {
   recipes: IRecipeClass[];
